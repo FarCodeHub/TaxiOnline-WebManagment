@@ -1,4 +1,4 @@
-# FoladAdminPanel
+# TaxiOnline-WebManagment
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
 
@@ -11,15 +11,12 @@ It's a Managment Panel which developed by Angular Cli and control all drivers an
 
 # Features
 
-  *Assing a travel to drivers
-  *cancel a travel
-  *Monitor driver performance
-  *Ban a driver
-  *Set fee for special route
+  * Assing a travel to drivers
+  * cancel a travel
+  * Monitor driver performance
+  * Ban a driver
+  * Set fee for special route
   
 
-# Screenshots
+# Screenshots 
 
- 
-# TaxiOnline-WebManagment
-TaxiOnline(Backend) is a online service based on the MSC (Mobarakeh steel company) order to meet the company's transportation needs.
