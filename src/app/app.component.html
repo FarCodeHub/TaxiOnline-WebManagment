@@ -1,0 +1,366 @@
+   <mat-sidenav-container class="sidenav-container" style="font-family: IRANSansWeb;">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+      <mat-toolbar style="font-family: 'IRANSansWeb';">دسترسی ها</mat-toolbar>
+      <mat-nav-list>
+          <a mat-list-item [routerLink]='["/"]'>
+              <mat-icon matListIcon style="color: steelblue;">home</mat-icon>
+              <span matLine style="font-family: 'IRANSansWeb';"> خانه</span>
+          </a>
+          <a mat-list-item [routerLink]='["/request-list"]'>
+              <mat-icon matListIcon style="color: violet;">list</mat-icon>
+              <span matLine style="font-family: 'IRANSansWeb';">لیست درخواست ها</span>
+          </a>
+          <a mat-list-item [routerLink]='["/trips"]'>
+            <mat-icon matListIcon style="color: tomato;">drive_eta</mat-icon>
+              <span matLine style="font-family: 'IRANSansWeb';">سفرها</span>
+          </a>
+          <a mat-list-item [routerLink]='["/financial"]'>
+            <mat-icon matListIcon style="color: rgb(247, 243, 6);">monetization_on</mat-icon>
+              <span matLine style="font-family: 'IRANSansWeb';">مالی</span>
+          </a>
+          <a mat-list-item [routerLink]='["/reportsList"]'>
+            <mat-icon matListIcon style="color: rgb(45, 168, 8);">description</mat-icon>
+              <span matLine style="font-family: 'IRANSansWeb';">گزارشات</span>
+          </a>
+          
+      </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content  >
+      <mat-toolbar color="primary">
+          <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+              *ngIf="isHandset$ | async">
+              <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>
+          <span style="font-family: 'IRANSansWeb';">سیستم حمل و نقل و ترابی فولاد مبارکه</span>
+      </mat-toolbar>
+      <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>   
+
+ 
+  <!-- <mat-card style="margin-left: 32px;margin-right: 32px;margin-top: 32px;width: 20%;font-family: IRANSansWeb;">
+
+            <div class="row align-items-center">
+                <div class="col-1">
+                    <mat-icon matSuffix>event_note</mat-icon>
+                </div>
+                <div class="col-2">
+                     <label>اعزام :</label>
+               </div>
+                  <div class="col-4">
+                    <button type="button" class="btn btn-outline-primary">همین حالا</button>
+                </div>
+                <div class="col-1">
+                    <mat-icon matSuffix>alarm</mat-icon>
+               </div>
+               <div class="col-1">
+                
+           </div>
+           <div class="col-3">
+            <button type="button" class="btn btn-success" style="float: left;color: white;">حرکت</button>
+        </div>
+            </div>
+        </mat-card>
+        <br>
+        <mat-card style="margin-left: 32px;margin-right: 32px;width: 20%;font-family: IRANSansWeb;">
+
+                <mat-form-field appearance="outline" style="width: 100%;">
+                  <mat-label>از</mat-label>
+                  <input matInput placeholder="مکان مورد نظر را وارد کنید">
+                  <mat-icon style="color:rgb(101, 101, 224);" matSuffix>room</mat-icon>
+                </mat-form-field>
+                <div class="row align-items-center">
+                    <div class="col-1">
+                 
+                    </div>
+                    <div class="col-9">
+                        <hr>
+                    </div>
+                    <div class="col-1">
+                        <mat-icon matSuffix>import_export</mat-icon>
+                    </div>
+                  </div>
+                    
+              
+               
+                <mat-form-field appearance="outline" style="width: 100%;">
+                    <mat-label>به</mat-label>
+                    <input matInput placeholder="مکان مورد نظر را وارد کنید">
+                    <mat-icon matSuffix style="color: yellowgreen;">adjust</mat-icon>
+                  </mat-form-field>
+      
+      
+      
+                  <div class="row align-items-center">
+                      <div class="col-4">
+  <div style="text-align: center;">
+          <mat-icon matSuffix style="color: rgb(43, 190, 235);">drive_eta</mat-icon>
+</div>                      
+<div style="text-align: center;">
+    <label style=" 
+    font-size: 0.7rem;
+    font-weight: bold;">فاصله</label>
+</div>
+<div style="text-align: center;">
+    <label style="font-size: 0.9rem;
+    font-weight: 500;"> 20KM </label>
+
+   
+
+
+
+</div>
+
+                         
+                      </div>
+   
+                      <div class="col-4">
+                        <div style="text-align: center;">
+                            <mat-icon matSuffix style="color: rgb(97, 197, 39);">access_time</mat-icon>
+                  </div> 
+                            <div style="text-align: center;">
+                                <label style=" 
+                                font-size: 0.7rem;
+                                font-weight: bold;">زمان</label>
+                            </div>
+                            <div style="text-align: center;">
+                                <label style="    font-size: 0.9rem;
+                                font-weight: 500;">15Min</label>
+                            </div>
+
+                       
+                      </div>
+
+<div class="col-4">
+    <div style="text-align: center;">
+        <mat-icon matSuffix style="color: rgb(197, 39, 144);">request_quote</mat-icon>
+</div> 
+        <div style="text-align: center;">
+            <label style=" 
+            font-size: 0.7rem;
+            font-weight: bold;">هزینه پرداخت شده</label>
+        </div>
+        <div style="text-align: center;">
+            <label style="    font-size: 0.9rem;
+            font-weight: 500;">95000IRR</label>
+        </div>
+
+</div>
+
+                  </div>
+      
+      
+      
+      
+                </mat-card>     -->
+  
+
+  <!--  <mat-card style="margin-left: 32px;margin-right: 32px;margin-top: 32px;width: 20%;font-family: IRANSansWeb;">
+                    <div class="row align-items-start">
+                        <div class="col-6">
+                            <img src="assets/images/circule.png" style="width: 40%;">
+                            <br>
+                            <label style="margin-top: 8px;font-weight: 700;">علی علوی</label>
+                        </div>
+                
+                        <div class="col-6">
+                            <img src="assets/images/plak.jpg" style="width: 100%;margin-top: 10px;">
+                            <label style="margin-top: 28px;font-weight: 700;margin-right: 44px;">سمند سفید</label>
+                        </div>
+                
+                    </div>  
+                    
+                    <hr>
+
+                    <div class="row align-items-center">
+                        <div class="col-3" style="text-align: center;">
+                            <label style="margin-top: 8px;font-weight: 700;">امتیاز</label>
+                 
+                        </div>
+                
+                        <div class="col-5" style="text-align: center;">
+                            <label style="margin-top: 8px;font-weight: 700">متوسط سرعت</label>
+                  
+                        </div>
+                        <div class="col-4" style="text-align: center;">
+                            <label style="margin-top: 8px;font-weight: 700">رضایت مندی</label>
+                         
+                        </div>
+                
+                    </div>  
+                
+                    <div class="row align-items-end">
+                        <div class="col-3" style="text-align: center;">
+ 
+                            <img src="assets/images/star.png" style="width: 100px;margin-top: 10px;">
+                        </div>
+                
+                        <div class="col-5" style="text-align: center;">
+    
+                        <label>70KM</label>
+                        </div>
+                        <div class="col-4" style="text-align: center;">
+          
+                            <img src="assets/images/sta.png" style="width: 70%;margin-top: 10px;">
+                        </div>
+                
+                    </div>  
+<div style="text-align: center;margin-top: 16px;">
+                    <button class="btn"><i class="fa fa-phone" style="float: left;font-size: xx-large;"></i> تماس</button>
+                </div>
+                </mat-card> -->
+
+  
+   <!-- <mat-card style="margin-left: 32px;margin-right: 32px;margin-top: 32px;width: 20%;font-family: IRANSansWeb;">
+<div style="font-weight: 600;">
+    <label>آیا از سفر خود راضی بودید ؟</label>
+</div>
+<div style="text-align: center;">
+<img src="assets/images/star.png" style="width: 70%;margin-top: 10px;">
+</div>
+<mat-form-field appearance="outline" style="width: 100%;margin-top: 8px;">
+    <mat-label>توضیح</mat-label>
+    <input matInput placeholder="چیزی هست که بخوای با ما در میان بذاری ؟">
+   
+  </mat-form-field>
+  <div class="row align-items-start">
+      <div class="col-6">
+        <button class="btn" style="width: 100%;background: rgb(113, 173, 23);color: white;"><i class="fa fa-handshake-o" style="font-size: large;"></i> اتمام سفر</button>
+      </div>
+      <div class="col-6">
+        <button class="btn" style="width: 100%;background: cornflowerblue;color: white;"><i class="fa fa-phone" style="font-size: large;"></i> تماس با پشتیبانی</button>
+      </div>
+      </div>
+
+                    </mat-card>   -->
+  
+
+   <!-- <mat-card style="margin-left: 32px;margin-right: 32px;margin-top: 32px;width: 20%;font-family: IRANSansWeb;">
+                        <div>
+                            <label style="font-weight: 600;">پیگیری درخواست خودرو : </label>
+                        </div>
+                        <img src="assets/images/timeline.png" style="width: 100%;margin-top: 10px;">
+                        <div style="text-align: center;">
+                        <button class="btn" style="width: 90%;background: cornflowerblue;color: white;margin-top: 8px;"><i class="fa fa-chevron-circle-down" style="font-size: large;float: left;"></i>باشه</button>
+                    </div>    
+                    </mat-card> -->
+
+
+   <!-- <mat-card style="margin-left: 32px;margin-right: 32px;margin-top: 32px;width: 20%;font-family: IRANSansWeb;">
+
+                        <div class="row align-items-center">
+                            <div class="col-2">
+
+                            </div>
+                            <div class="col-8" style="text-align: center;">
+                             
+                                <img src="assets/images/search.png" style="width: 50%;margin-top: 10px;">
+<br>
+                                <label style="text-align: center;margin-bottom: 8px;">در حال جستجو ...</label>
+                                <mat-divider style="width: 60%;margin-right: 70px;margin-bottom: 16px;"></mat-divider>
+                                <div class="progress" style="margin-top: 16px;"> 
+                                    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 80%;
+                                    padding-left: 36px;
+                                    padding-right: 36px;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">
+                                   <div style="padding: 16px;text-align: center;">
+                                        <label>زمان باقی مانده : 00:30</label>
+                                    </div>
+                                 
+                                    </div>
+                                  </div>
+                                  <button class="btn" style="width: 50%;background: cornflowerblue;color: white;margin-top: 24px;"><i class="fa fa-chevron-circle-down" style="font-size: large;float: left;"></i>باشه</button>
+                            </div>
+                            <div class="col-2">
+
+                            </div>
+                        </div>
+
+                    </mat-card> -->
+ 
+   
+   <!-- <mat-card style="margin-left: 32px;margin-right: 32px;margin-top: 32px;width: 23%;font-family: IRANSansWeb;">
+
+                        <label style="font-weight: bold;color: gray;">درخواست دهنده : </label> <img src="assets/images/circule.png" style="width: 15%;margin-right: 4px;"><label style="font-weight: bold;color: gray;;margin-right: 8px;">علی قاسمی</label> <div style="float: left;margin-top: 20px;"><mat-icon matListIcon style="color: #c42494">apartment</mat-icon><label style="font-weight: bold;color: gray;;margin-right: 8px;">واحد حسابداری</label></div>
+                       
+                        <hr>
+                         <div style="margin-bottom: 8px;"><mat-icon matListIcon style="color: #198754">my_location</mat-icon><label style="font-weight: bold;color: gray;">مبدا : </label><label color="dark">استان اصفهان، خیابان هاتف</label> </div>
+                         <br>
+                         <div style="margin-bottom: 8px;"><mat-icon matListIcon style="color: #7370f5">place</mat-icon><label style="font-weight: bold;color: gray;">مقصد : </label> <label color="dark">اصفهان، خیابان عبدالرزاق، جنب سرای جارچی</label> </div>
+                    <br>
+                    <div class="row align-items-center">
+                       <div class="col-6">
+                        <mat-icon matListIcon style="color: #e43d3d">pan_tool</mat-icon> <label style="font-weight: bold;color: gray;">وضعیت توقف : </label><label color="dark">عدم توقف </label> 
+                    </div>
+                    <div class="col-6">
+                        <mat-icon matListIcon style="color: #1ac21a">alarm_on</mat-icon> <label style="font-weight: bold;color: gray;">زمان حرکت :</label><label color="dark">همین حالا</label> 
+
+                    </div>
+                    </div>
+                      
+                    
+                    <hr>  
+                  
+            <div class="row align-items-center">
+            <div class="col-4">
+              <div style="text-align: center;">
+                      <mat-icon matSuffix style="color: rgb(43, 190, 235);">drive_eta</mat-icon>
+            </div>                      
+            <div style="text-align: center;">
+                <label style=" 
+                font-size: 0.7rem;
+                font-weight: bold;">فاصله</label>
+            </div>
+            <div style="text-align: center;">
+                <label style="font-size: 0.9rem;
+                font-weight: 500;"> 48KM </label>
+            </div>
+            </div>
+               
+                                  <div class="col-4">
+                                    <div style="text-align: center;">
+                                        <mat-icon matSuffix style="color: rgb(97, 197, 39);">access_time</mat-icon>
+                              </div> 
+                                        <div style="text-align: center;">
+                                            <label style=" 
+                                            font-size: 0.7rem;
+                                            font-weight: bold;">متوسط زمان</label>
+                                        </div>
+                                        <div style="text-align: center;">
+                                            <label style="    font-size: 0.9rem;
+                                            font-weight: 500;">25Min</label>
+                                        </div>
+            
+                                   
+                                  </div>
+            
+            <div class="col-4">
+                <div style="text-align: center;">
+                    <mat-icon matSuffix style="color: rgb(197, 39, 144);">request_quote</mat-icon>
+            </div> 
+                    <div style="text-align: center;">
+                        <label style=" 
+                        font-size: 0.7rem;
+                        font-weight: bold;">محاسبه هزینه</label>
+                    </div>
+                    <div style="text-align: center;">
+                        <label style="    font-size: 0.9rem;
+                        font-weight: 500;">118000IRR</label>
+                    </div>
+            
+            </div>
+            
+            </div>
+                  
+            <div class="row align-items-end" style="margin-top: 8px;">
+                <div class="col-6" style="text-align: center;">
+                    <button class="btn" style="background: mediumseagreen;color: white;width: 100%;"><i class="fa fa-check"></i> قبول</button>
+                </div>
+
+                <div class="col-6" style="text-align: center;">
+                    <button class="btn" style="    background: orangered;color: white;width: 100%;"><i class="fa fa-close"></i> رد</button>
+                </div>
+
+            </div>
+                  
+   </mat-card>    -->

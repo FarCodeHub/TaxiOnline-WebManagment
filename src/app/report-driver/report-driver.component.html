@@ -1,0 +1,50 @@
+<div class="row align-items-start" style="margin: 8px;">
+
+    <div class="col-3">
+        <label style="font-weight: 600;color: gray;">نام راننده :    </label> <input type="text" [(ngModel)]="driverName" style="margin-right: 8px;"/>
+    </div>
+
+<div class="col-3"> <button mat-flat-button (click)="getDriversList(driverName)" color="primary" style="font-family:'IRANSansWeb';background: lightseagreen;">گزارش</button> </div>
+<div class="col-3"></div>
+</div>
+
+<mat-card class="shadow-sm rounded" style="margin: 8px;font-family: IRANSansWeb;background: #F2F6FF;">
+  <div class="row align-items-start">
+  <div class="col-2"><div style="text-align: center;margin-left: 62px;"><label style="font-weight: 600;color: gray;">نام راننده</label></div></div>
+  <div class="col-1"><div style="text-align: center;margin-left: 140px;"><label style="font-weight: 600;color: gray;">ماشین</label></div></div>
+  <div class="col-1"><div style="text-align: center;margin-left: 140px;"><label style="font-weight: 600;color: gray;">رنگ</label></div></div>
+  <div class="col-2"><div style="text-align: center;"><label style="font-weight: 600;color: gray;">پلاک</label></div></div>
+  <div class="col-1"><div style="text-align: center"><label style="font-weight: 600;color: gray;">تعداد سفر</label></div></div>
+  <div class="col-1"><div style="text-align: center;margin-left: 116px;"><label style="font-weight: 600;color: gray;">امتیاز</label></div></div>
+  <div class="col-2"><div><label style="font-weight: 600;color: gray; "> درخواست های رد کرده</label></div></div>
+  <div class="col-2"><div style=" margin-left: 32px;text-align: center;"><label style="font-weight: 600;color: gray;"> تلفن </label></div></div>
+  </div>
+  </mat-card>
+   <mat-card class="shadow-sm bg-white rounded" style="margin: 8px;font-family: IRANSansWeb;" *ngFor="let item of driverModel">
+    <div class="row align-items-center">
+      <div class="col-2"><img src="assets/images/circule.png" style="width: 25%;margin-right: 4px;"><label style="font-weight: bold;color: gray;;margin-right: 8px;">{{item.DriverName}}</label></div>
+      <div class="col-1">
+        <label color="dark" style="color: #198754;float: right">{{item.CarName}}</label>
+      </div>
+      <div class="col-1">
+        <label color="dark" style="color: #198754;float: right">{{item.CarColor}}</label>
+      </div>
+
+
+
+      <div class="col-2">  <img  src="assets/images/plak/{{item.CarPateNoImage}}.jpg" style="width: 45%;margin-right: 44px;"></div>
+
+      <div class="col-1"> <div style="text-align: center;"><label style="font-weight: bold;color: gray; margin-right:  6px;margin-top: 4px;"> {{item.TripNumber}}</label></div></div>
+      <div class="col-1">
+        
+        <label style="font-weight: bold;color: gray;float: right;margin-right: 6px;margin-top: 4px;"> {{item.DriverScore}}</label>
+      
+      
+        </div>
+       <div class="col-2"> <label style="font-weight: bold;color: gray ;margin-right: 48px; margin-top: 4px;text-align: center;"> {{item.TripDenid}} </label> </div>
+       <div class="col-2"> <label style="font-weight: bold;color: gray;;margin-right: 38px; margin-top: 4px;text-align: center;"> {{item.PhoneNumber}} </label> </div>
+      
+  
+    </div>
+  
+  </mat-card> 

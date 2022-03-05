@@ -1,0 +1,169 @@
+
+
+
+  <div class="row align-items-start" style="margin: 16px;
+ background: white;
+ padding-top: 32px;
+ padding-bottom: 32px;">
+   <div class="col-3">
+    <label style="color: gray;font-size: 28px;margin-top: 8px;">کل درخواست ها  </label>
+    <br>
+    <div style="text-align: center;">
+    <label   style="font-weight: bold;
+    color: #628bd6;
+    font-size: 5.5rem;
+    margin-top: 46px;
+    margin-left: 100px;"> {{tripModel.length}} </label>
+  </div>
+   </div>
+   <div class="col-3">
+    <label style="color: gray;font-size: 28px;margin-top: 8px;">عدم رسیدگی</label>
+    <br>
+    <div style="text-align: center;">
+    <label   style="font-weight: bold;
+    color: #628bd6;
+    font-size: 5.5rem;
+    margin-top: 46px;
+    margin-left: 100px;"> {{pendingNumber}} </label>
+  </div>
+   </div>
+   <div class="col-3">
+
+    <label style="color: gray;font-size: 28px;margin-top: 8px;">تایید راننده</label>
+    <br>
+    <div style="text-align: center;">
+    <label   style="font-weight: bold;
+    color: #628bd6;
+    font-size: 5.5rem;
+    margin-top: 46px;
+    margin-left: 100px;"> {{driverAcceptNumber}} </label>
+  </div>
+   </div>
+
+   <div class="col-3">
+    <label style="color: gray;font-size: 28px;margin-top: 8px;">رسیدگی شده</label>
+    <br>
+    <div style="text-align: center;">
+    <label   style="font-weight: bold;
+    color: #628bd6;
+    font-size: 5.5rem;
+    margin-top: 46px;
+    margin-left: 100px;"> {{assignDriverNumber}}</label>
+  </div>
+
+
+   </div>
+ </div>
+
+ <div class="row align-items-start" style="text-align: left;margin-left: 82px;">
+  <div class="col-8"> </div>
+  <div class="col-1">
+ <div class="dropdown">
+   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="direction: ltr;margin-top:8px;margin-left:16px;margin-right:16px;background: #e3e6e5;
+   font-size: smaller;color: black;
+     border: none;">
+     مرتب سازی بر اساس سفر
+   </button>
+   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+     <li><a class="dropdown-item" href="#">دور ترین سفر</a></li>
+     <li><a class="dropdown-item" href="#">نزدیک ترین سفر</a></li>
+
+   </ul>
+ </div>
+ </div>
+ <div class="col-2">
+ <div class="dropdown" >
+   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="direction: ltr;margin-top:8px;margin-left:16px;margin-right:16px;background: #e3e6e5;
+   font-size: smaller;color: black;border: none;">
+     مرتب سازی بر اساس واحد
+   </button>
+   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+     <li><a class="dropdown-item" href="#">بیشترین امتیاز</a></li>
+     <li><a class="dropdown-item" href="#">کمترین امتیاز</a></li>
+
+   </ul>
+ </div>
+ </div>
+ <div class="col-1">
+ <div class="dropdown">
+   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false" style="direction: ltr;margin-top:8px;margin-left:16px;margin-right:16px;background: #e3e6e5;
+   font-size: smaller;color: black;border: none;">
+     مرتب سازی بر اساس تخصیص
+   </button>
+   <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+     <li><a class="dropdown-item" href="#">تخصیص داده شده</a></li>
+     <li><a class="dropdown-item" href="#">عدم تخصیص</a></li>
+
+   </ul>
+ </div>
+ </div>
+ </div>
+ <mat-card class="shadow-sm rounded" style="margin: 8px;font-family: IRANSansWeb;background: #F2F6FF;">
+  <div class="row align-items-start">
+<div class="col-2"><div style="text-align: center;margin-left: 62px;"><label style="font-weight: 600;color: gray;">درخواست کننده</label></div></div>
+<div class="col-3"><div style="text-align: center;margin-left: 140px;"><label style="font-weight: 600;color: gray;">مبدا / مقصد</label></div></div>
+<div class="col-1"><div style="text-align: center;"><label style="font-weight: 600;color: gray;">واحد</label></div></div>
+<div class="col-1"><div style="text-align: center;"><label style="font-weight: 600;color: gray;">نوع سفر</label></div></div>
+<div class="col-1"><div style="text-align: center"><label style="font-weight: 600;color: gray;">زمان درخواست</label></div></div>
+<div class="col-1"><div style="text-align: center;margin-left: 116px;"><label style="font-weight: 600;color: gray;">وضعیت</label></div></div>
+<div class="col-1"><div><label style="font-weight: 600;color: gray;"> مکان ماشین</label></div></div>
+<div class="col-2"><div style="text-align: left;margin-left: 32px;"><label style="font-weight: 600;color: gray;"> راننده </label></div></div>
+</div>
+</mat-card>
+ <mat-card class="shadow-sm bg-white rounded" style="margin: 8px;font-family: IRANSansWeb;" *ngFor="let item of tripModel">
+  <div class="row align-items-center">
+    <div class="col-2"><img src="assets/images/circule.png" style="width: 25%;margin-right: 4px;"><label style="font-weight: bold;color: gray;;margin-right: 8px;">{{item.CustomerName}}</label></div>
+    <div class="col-3">
+      <div>
+      <mat-icon matListIcon style="color: #198754;float: right">my_location</mat-icon>
+      <label style="font-weight: bold;color: gray;float: right;margin-right: 4px;">مبدا : </label>
+      <label color="dark" style="color: #198754;float: right">{{item.FromAddress}}</label>
+    </div>
+    <br>
+    <br>
+    <div>
+      <mat-icon matListIcon style="color: #7370f5;float: right;">place</mat-icon><label style="font-weight: bold;color: gray;float: right">مقصد : </label> <label color="dark" style="color: #7370f5;float: right">{{item.ToAddress}}</label>
+    </div>
+    </div>
+    <div class="col-1"><mat-icon matListIcon style="color: #c42494;float: right;">apartment</mat-icon><label style="font-weight: bold;color: gray;;margin-right: 8px;float: right;margin-top: 4px;">{{item.UnitName}}</label></div>
+    <div class="col-1"><div style="text-align: center;"><label style="padding: 16px;border-radius: 18px;color: white;background:#9ccc88" >{{item.TypeTripName}}  </label></div></div>
+    <div class="col-1"><mat-icon matListIcon style="color: #e65454;margin-right: 28px;float: right;">access_time</mat-icon><label style="font-weight: bold;color: gray;float: right;margin-right: 6px;margin-top: 4px;"> {{item.PersianDateTime}}</label></div>
+    <div class="col-1">
+
+       <div *ngIf="item.Status == 1"><mat-icon matListIcon style="color: #6b6b6e;float: right;">access_time</mat-icon><label style="font-weight: bold;color: rgb(94, 93, 92);float: right;margin-right: 6px;margin-top: 4px;"> {{item.StatusName}}</label> </div>
+       <div *ngIf="item.Status == 2"><mat-icon matListIcon style="color: #ebb72a;float: right;">local_taxi</mat-icon><label style="font-weight: bold;color: rgb(94, 93, 92);float: right;margin-right: 6px;margin-top: 4px;"> {{item.StatusName}}</label> </div>
+       <div *ngIf="item.Status == 3"><mat-icon matListIcon style="color: #5e7bdd;float: right;">how_to_reg</mat-icon><label style="font-weight: bold;color: rgb(94, 93, 92);float: right;margin-right: 6px;margin-top: 4px;"> {{item.StatusName}}</label> </div>
+       <div *ngIf="item.Status == 4"><mat-icon matListIcon style="color: #38d845;float: right;">play_circle</mat-icon><label style="font-weight: bold;color: rgb(94, 93, 92);float: right;margin-right: 6px;margin-top: 4px;"> {{item.StatusName}}</label> </div>
+       <div *ngIf="item.Status == 5"><mat-icon matListIcon style="color: #cf2e18;float: right;">do_not_disturb_on</mat-icon><label style="font-weight: bold;color: rgb(94, 93, 92);float: right;margin-right: 6px;margin-top: 4px;"> {{item.StatusName}}</label> </div>
+       <div *ngIf="item.Status == 6"><mat-icon matListIcon style="color: #e254bf;float: right;">check_circle</mat-icon><label style="font-weight: bold;color: rgb(94, 93, 92);float: right;margin-right: 6px;margin-top: 4px;"> {{item.StatusName}}</label> </div>
+
+
+
+      </div>
+     <div class="col-1"><div [hidden]="item.Type == 1"><mat-icon matListIcon style="color: #494aa8;float: right;">near_me</mat-icon><label style="font-weight: bold;color: gray;;margin-right: 8px;float: right;margin-top: 4px"> موقعیت </label></div></div>
+    <div class="col-2">
+
+      <button mat-flat-button color="primary" (click)="gotoDriversList('drivers',item)" [hidden]="item.DriverId != null" style="float: left;font-family: 'IRANSansWeb';">انتخاب راننده</button>
+      <div [hidden]="item.DriverId == null" style="float: left;text-align: left;">
+    <mat-icon matListIcon style="color: #2df337">local_taxi</mat-icon><label style="font-weight: bold;color: gray;">راننده : </label> <label *ngIf="item.DriverTrip != null" color="dark">{{item.DriverTrip.DriverName}}</label>
+    <br>
+
+    <label color="dark" *ngIf="item.DriverTrip != null" style="font-size: large;margin-top: 8px;;margin-bottom: 8px;;margin-left: 32px;">{{item.DriverTrip.CarName}}</label>
+
+    <br>
+    <img *ngIf="item.DriverTrip != null" src="assets/images/plak/{{item.DriverTrip.CarPateNoImage}}.jpg" style="width: 45%;margin-right: 4px;">
+  </div>
+  </div>
+  </div>
+
+</mat-card>
+
+
+
+
+
+
+
+
+
+

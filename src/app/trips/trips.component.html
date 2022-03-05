@@ -1,0 +1,187 @@
+ 
+
+<!--  
+<mat-card class="shadow-sm rounded" style="margin: 8px;font-family: IRANSansWeb;background: #F2F6FF;">
+ <div class="row align-items-start">
+<div class="col-2"><div style="text-align: center;margin-left: 62px;"><label style="font-weight: 600;color: gray;">درخواست کننده</label></div></div>
+<div class="col-3"><div style="text-align: center;margin-left: 140px;"><label style="font-weight: 600;color: gray;">مبدا / مقصد</label></div></div>
+<div class="col-1"><div style="text-align: center;"><label style="font-weight: 600;color: gray;">واحد</label></div></div>
+<div class="col-1"><div style="text-align: center;"><label style="font-weight: 600;color: gray;">نوع سفر</label></div></div>
+<div class="col-1"><div style="text-align: center"><label style="font-weight: 600;color: gray;">زمان درخواست</label></div></div>
+<div class="col-1"><div style="text-align: center;margin-left: 116px;"><label style="font-weight: 600;color: gray;">تاییدیه</label></div></div>
+<div class="col-1"><div><label style="font-weight: 600;color: gray;"> مکان ماشین</label></div></div>
+<div class="col-2"><div style="    text-align: left;
+ margin-left: 32px;"><label style="font-weight: 600;color: gray;"> وضعیت </label></div></div>
+</div>
+</mat-card> -->
+<!-- <mat-card class="shadow-sm bg-white rounded" style="margin: 8px;font-family: IRANSansWeb;" *ngFor="let item of travel">
+
+ <div class="row align-items-center">
+   <div class="col-2"><img src="assets/images/circule.png" style="width: 25%;margin-right: 4px;"><label style="font-weight: bold;color: gray;;margin-right: 8px;">{{item.FullName}}</label></div>
+   <div class="col-3">
+     <div>
+     <mat-icon matListIcon style="color: #198754">my_location</mat-icon>
+     <label style="font-weight: bold;color: gray;">مبدا : </label>
+     <label color="dark" style="color: #198754;">{{item.orgin}}</label>
+   </div>
+   <div>
+     <mat-icon matListIcon style="color: #7370f5">place</mat-icon><label style="font-weight: bold;color: gray;">مقصد : </label> <label color="dark" style="color: #7370f5;">{{item.destination}}</label>
+   </div>
+   </div>
+   <div class="col-1"><mat-icon matListIcon style="color: #c42494">apartment</mat-icon><label style="font-weight: bold;color: gray;;margin-right: 8px;"> واحد {{item.Unit}}</label></div>
+   <div class="col-1"><div style="text-align: center;"><label style="padding: 16px;border-radius: 18px;background: skyblue;color: white;">سفر {{item.travelType}}  </label></div></div>
+   <div class="col-1"><mat-icon matListIcon style="color: #e65454;margin-left: 4px;font-size: 30px;margin-right: 28px;">access_time</mat-icon><label style="font-weight: bold;color: gray;font-size: 20px;"> {{item.time}}</label></div>
+   <div class="col-1">
+     
+     <div *ngIf="item.ControlTrip == 1"></div>
+     <div *ngIf="item.ControlTrip==2"><label style="font-weight: bold;color: rgb(226, 116, 12)"> در انتظار تایید</label></div>
+     <div *ngIf="item.ControlTrip==3"><label style="font-weight: bold;color: rgb(31, 141, 37)"> تایید شده</label></div>
+   </div>
+    <div class="col-1"><div [hidden]="item.Type == 1"><mat-icon matListIcon style="color: #494aa8">near_me</mat-icon><label style="font-weight: bold;color: gray;;margin-right: 8px;"> موقعیت </label></div></div>
+   <div class="col-2">
+
+     <button mat-flat-button color="primary" [hidden]="item.Type == 2" style="float: left;font-family: 'IRANSansWeb';">انتخاب راننده</button>
+     <div [hidden]="item.Type == 1" style="float: left;text-align: left;">
+   <mat-icon matListIcon style="color: #2df337">local_taxi</mat-icon><label style="font-weight: bold;color: gray;">راننده : </label> <label color="dark">{{item.CarName}}</label>
+   <br>
+    
+   <label color="dark" style="font-size: large;margin-top: 8px;;margin-bottom: 8px;;margin-left: 32px;">{{item.CarType}}</label>
+  
+   <br>
+   <img src={{item.CarNumber}} style="width: 45%;margin-right: 4px;">
+ </div>  
+ </div>
+ </div>
+
+</mat-card>    -->
+
+
+
+
+
+  <div class="row align-items-start shadow-sm bg-white rounded" style="margin: 8px;font-family: IRANSansWeb;">
+ 
+
+    <div class="col-5">
+        <label style="font-weight: 600;color: gray;">جستجو و مرتب سازی </label>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-1">
+        <mat-icon matListIcon style="color: #13d33d">sort</mat-icon>
+    </div>
+    <div class="col-2">
+<mat-icon matListIcon style="color: #13d33d;float: left;">event_note</mat-icon> 
+        
+    </div>
+
+</div>
+
+<mat-card class="shadow-sm bg-white rounded" style="margin: 8px;font-family: IRANSansWeb;">
+    <div class="row align-items-center">
+
+     <div class="col-6">
+    <label style="font-weight: 600;color: gray;">مسافر : </label><label color="dark"> حسن قربانی</label>
+    </div>
+    <div class="col-6">
+    <mat-icon matListIcon style="color: #13d33d">monetization_on</mat-icon><label style="font-weight: bold;color: gray;;margin-right: 8px;"> مبلغ : </label><label color="dark"> 105,000 ریال</label>
+</div>
+</div>
+<mat-icon matListIcon style="color: #198754">my_location</mat-icon>
+     <label style="font-weight: bold;color: gray;">مبدا : </label>
+     <label color="dark" style="color: #198754;"> استان اصفهان، خیابان هاتف </label>
+<br>
+     <mat-icon matListIcon style="color: #7370f5">place</mat-icon><label style="font-weight: bold;color: gray;">مقصد : </label> <label color="dark" style="color: #7370f5;">اصفهان، خیابان عبدالرزاق، جنب سرای جارچی </label>
+
+     <div class="row align-items-end" style="margin-top: 8px;">
+
+        <div class="col-6">
+      <mat-icon matListIcon style="color: #c4357c">hourglass_top</mat-icon> <label style="font-weight: 600;color: gray;">شروع : </label><label color="dark" style="    font-size: 11px;">99/10/11 16:40</label>
+       </div>
+       <div class="col-6">
+       <mat-icon matListIcon style="color: #4565ce">hourglass_bottom</mat-icon><label style="font-weight: bold;color: gray;;margin-right: 8px;"> پایان : </label><label color="dark" style="    font-size: 11px;"> 99/10/11 17:30</label>
+   </div>
+   </div>
+</mat-card>
+
+<mat-card class="shadow-sm bg-white rounded" style="margin: 8px;font-family: IRANSansWeb;">
+    <div class="row align-items-center">
+
+     <div class="col-6">
+    <label style="font-weight: 600;color: gray;">مسافر : </label><label color="dark"> فرزاد اکبری</label>
+    </div>
+    <div class="col-6">
+    <mat-icon matListIcon style="color: #13d33d">monetization_on</mat-icon><label style="font-weight: bold;color: gray;;margin-right: 8px;"> مبلغ : </label><label color="dark"> 153,000 ریال</label>
+</div>
+</div>
+<mat-icon matListIcon style="color: #198754">my_location</mat-icon>
+     <label style="font-weight: bold;color: gray;">مبدا : </label>
+     <label color="dark" style="color: #198754;"> استان اصفهان، خیابان کاشانی </label>
+<br>
+     <mat-icon matListIcon style="color: #7370f5">place</mat-icon><label style="font-weight: bold;color: gray;">مقصد : </label> <label color="dark" style="color: #7370f5;">اصفهان ناژوان بلوار آتشگاه </label>
+
+     <div class="row align-items-end" style="margin-top: 8px;">
+
+        <div class="col-6">
+      <mat-icon matListIcon style="color: #c4357c">hourglass_top</mat-icon> <label style="font-weight: 600;color: gray;">شروع : </label><label color="dark" style="    font-size: 11px;">99/10/11 20:10</label>
+       </div>
+       <div class="col-6">
+       <mat-icon matListIcon style="color: #4565ce">hourglass_bottom</mat-icon><label style="font-weight: bold;color: gray;;margin-right: 8px;"> پایان : </label><label color="dark" style="    font-size: 11px;"> 99/10/11 20:30</label>
+   </div>
+   </div>
+</mat-card>
+
+<mat-card class="shadow-sm bg-white rounded" style="margin: 8px;font-family: IRANSansWeb;">
+    <div class="row align-items-center">
+
+     <div class="col-6">
+    <label style="font-weight: 600;color: gray;">مسافر : </label><label color="dark"> جلال محقق</label>
+    </div>
+    <div class="col-6">
+    <mat-icon matListIcon style="color: #13d33d">monetization_on</mat-icon><label style="font-weight: bold;color: gray;;margin-right: 8px;"> مبلغ : </label><label color="dark"> 99,000 ریال</label>
+</div>
+</div>
+<mat-icon matListIcon style="color: #198754">my_location</mat-icon>
+     <label style="font-weight: bold;color: gray;">مبدا : </label>
+     <label color="dark" style="color: #198754;"> استان اصفهان,  خیابان مولوی </label>
+<br>
+     <mat-icon matListIcon style="color: #7370f5">place</mat-icon><label style="font-weight: bold;color: gray;">مقصد : </label> 
+     <label color="dark" style="color: #7370f5;">استان اصفهان خیابان امام خمینی </label>
+
+     <div class="row align-items-end" style="margin-top: 8px;">
+
+        <div class="col-6">
+      <mat-icon matListIcon style="color: #c4357c">hourglass_top</mat-icon> <label style="font-weight: 600;color: gray;">شروع : </label><label color="dark" style="    font-size: 11px;">99/10/11 13:25</label>
+       </div>
+       <div class="col-6">
+       <mat-icon matListIcon style="color: #4565ce">hourglass_bottom</mat-icon><label style="font-weight: bold;color: gray;;margin-right: 8px;"> پایان : </label><label color="dark" style="    font-size: 11px;"> 99/10/11 14:00</label>
+   </div>
+   </div>
+</mat-card>
+
+<mat-card class="shadow-sm bg-white rounded" style="margin: 8px;font-family: IRANSansWeb;">
+    <div class="row align-items-center">
+
+     <div class="col-6">
+    <label style="font-weight: 600;color: gray;">مسافر : </label><label color="dark"> محسن براتی</label>
+    </div>
+    <div class="col-6">
+    <mat-icon matListIcon style="color: #13d33d">monetization_on</mat-icon><label style="font-weight: bold;color: gray;;margin-right: 8px;"> مبلغ : </label><label color="dark"> 191,000 ریال</label>
+</div>
+</div>
+<mat-icon matListIcon style="color: #198754">my_location</mat-icon>
+     <label style="font-weight: bold;color: gray;">مبدا : </label>
+     <label color="dark" style="color: #198754;"> احمد آباد،اصفهان</label>
+<br>
+     <mat-icon matListIcon style="color: #7370f5">place</mat-icon><label style="font-weight: bold;color: gray;">مقصد : </label> 
+     <label color="dark" style="color: #7370f5;">اصفهان، نبوی منش، آتشگاه</label>
+
+     <div class="row align-items-end" style="margin-top: 8px;">
+
+        <div class="col-6">
+      <mat-icon matListIcon style="color: #c4357c">hourglass_top</mat-icon> <label style="font-weight: 600;color: gray;">شروع : </label><label color="dark" style="    font-size: 11px;">99/10/11 09:55</label>
+       </div>
+       <div class="col-6">
+       <mat-icon matListIcon style="color: #4565ce">hourglass_bottom</mat-icon><label style="font-weight: bold;color: gray;;margin-right: 8px;"> پایان : </label><label color="dark" style="    font-size: 11px;"> 99/10/11 10:40</label>
+   </div>
+   </div>
+</mat-card>  

@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: IRANSansWeb;
+    src: url('assets/fonts/IRANSansWeb.woff2');
+  }
+  @font-face {
+    font-family: IRANSansWeb-Light;
+    src: url('assets/fonts/IRANSansWeb_Light.woff2');
+  }
+  
+  @font-face {
+    font-family: IRANSansWeb-Bold;
+    src: url('assets/fonts/IRANSansWeb_Bold.woff2');
+  }
+html, body { font-family: IRANSansWeb;height: 100%; }
+body { margin: 0; font-family: IRANSansWeb; }
