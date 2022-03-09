@@ -8,38 +8,38 @@ import { DriverModel } from '../models/DriverModel';
     providedIn: 'root'
   })
   export class HomeService {
-  
-  
+
+
     constructor(private http: HttpClient) { }
 
 
     getTrips(): Observable<TripModel[]> {
-        return this.http.get<TripModel[]>('http://taxiapi.iranbarnet.com/api/GetRequestTrips');
+        return this.http.get<TripModel[]>('###/api/GetRequestTrips');
       }
 
     getActiveDrivers(): Observable<DriverModel[]> {
-        return this.http.get<DriverModel[]>('http://taxiapi.iranbarnet.com/api/GetActiveDrivers');
+        return this.http.get<DriverModel[]>('###/api/GetActiveDrivers');
       }
 
       getTripsList(status:string): Observable<TripModel[]> {
 
-        const httpOptions = { 
+        const httpOptions = {
           headers: new HttpHeaders({
             'Content-Type': 'application/json',
           })
         };
 
-        return this.http.get<TripModel[]>('http://taxiapi.iranbarnet.com/api/GetTripsList?status='+status,httpOptions);
-      } 
+        return this.http.get<TripModel[]>('###/api/GetTripsList?status='+status,httpOptions);
+      }
       getDriversList(driverName:string): Observable<DriverModel[]> {
 
-        const httpOptions = { 
+        const httpOptions = {
           headers: new HttpHeaders({
             'Content-Type': 'application/json',
           })
         };
 
-        return this.http.get<DriverModel[]>('http://taxiapi.iranbarnet.com/api/GetDriversList?driverName='+driverName,httpOptions);
-      } 
+        return this.http.get<DriverModel[]>('###/api/GetDriversList?driverName='+driverName,httpOptions);
+      }
 
   }
