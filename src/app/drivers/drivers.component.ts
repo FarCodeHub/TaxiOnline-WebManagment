@@ -31,7 +31,7 @@ assignActiveDriver(tripId,driverId)
   };
 
 
-  this.http.post('http://taxiapi.iranbarnet.com/api/AssignDriverToTrip?tripId='+tripId+'&driverId='+ driverId, httpOptions)
+  this.http.post('###/api/AssignDriverToTrip?tripId='+tripId+'&driverId='+ driverId, httpOptions)
     .subscribe(data => {
       if (data != null)
         this.router.navigate(['/request-list'])
